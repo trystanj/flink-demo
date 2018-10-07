@@ -25,28 +25,6 @@ import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011
 
-/**
- * This example shows an implementation of WordCount with data from a text socket. 
- * To run the example make sure that the service providing the text data is already up and running.
- *
- * To start an example socket text stream on your local machine run netcat from a command line, 
- * where the parameter specifies the port number:
- *
- * {{{
- *   nc -lk 9999
- * }}}
- *
- * Usage:
- * {{{
- *   SocketTextStreamWordCount <hostname> <port> <output path>
- * }}}
- *
- * This example shows how to:
- *
- *   - use StreamExecutionEnvironment.socketTextStream
- *   - write a simple Flink Streaming program in scala.
- *   - write and use user-defined functions.
- */
 object KafkaWordCount {
 
   def main(args: Array[String]) {
