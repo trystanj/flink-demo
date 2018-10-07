@@ -26,3 +26,11 @@ WordWithCount(neat (kafka),2)
 WordWithCount(cool (kafka),1)
 WordWithCount(wow (kafka),1)
 ```
+
+### To Do
+1. Add sinks
+    1. elasticsearch
+    1. redis
+1. Handle running aggregations and periodic updates?
+1. Add Async I/O to make http request on msg received
+1. Merge two kafka streams
