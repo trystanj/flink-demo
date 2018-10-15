@@ -47,13 +47,13 @@ object KafkaWordCount {
     val counts = stream
       .flatMap { _.toLowerCase.split("\\W+") filter { _.nonEmpty } }
       .map(w => WordWithCount(w + " (kafka)", 1))
-      .keyBy("word")
+      .keyBy(_.word)
       .timeWindow(Time.seconds(5), Time.seconds(5))
       .sum(1)
 
     counts.print()
 
-    env.execute("Scala SocketTextStreamWordCount Example")
+    env.execute("Scala KafkaWordCount Example")
   }
 
   // Data type for words with count
